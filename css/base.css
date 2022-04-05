@@ -1,0 +1,231 @@
+                                        /*GENERALES/*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+@font-face {
+    font-family: MyFamily;
+    src: url(../fuentes/ARLRDBD.ttf);
+}
+@font-face {
+    font-family: MyFamily2;
+    src: url(../fuentes/ContextRoundedBlackSSiBlack.ttf);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.img{
+    border: solid 3px #2E3440;
+    border-radius:20px;
+    width: 100%;
+    margin: 0px;
+}
+body {
+    background-color: #434C5E
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 15px;
+    font-family: MyFamily2;
+    text-align: center;
+    font-size: 40px;
+    color: #88C0D0
+}
+.nombre {
+    float: left;  
+}
+.precio {
+    float: right;
+    color: #A3BE8C;
+    padding-left: 20px; 
+
+}
+                                            /*HEADER*/
+header {
+    border-bottom: 3px solid #2E3440;
+    background-color: #3B4252;
+}
+.header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    grid-gap: 0 3%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 55px;
+    padding-right: 55px;
+    align-items: center;
+
+}
+/*.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 3px solid #2E3440;
+    background-color: #3B4252;
+    align-items: center;
+}*/
+/*.header__logo a img {
+    padding-left: 20px;
+}
+.header__search a img {
+    padding-right: 50px;
+}
+.header__perfil a img {
+    padding-right: 50px;
+}
+.header__cart a img{
+    padding-right: 20px;
+
+}*/
+
+.header__nav ul li {
+    display: inline;
+    font-size: 20px;
+    padding: 10px;
+}
+.header__nav ul li a {
+    font-family: MyFamily;
+    text-decoration: none;
+    color: #88C0D0;
+}
+                                                    /*BEST SELLERS*/
+.grilla1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 3%;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+.prueba {
+    font-family: MyFamily2;
+    font-size: 25px;
+    color: #8FBCBB;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+                                                /*NEW ARRIVALS*/
+.grilla2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 3%;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+.prueba2 {
+    font-family: MyFamily2;
+    color: #8FBCBB;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+                                                    /* FOOTER */
+
+.contenidoFooter {
+    margin-top: 80px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #3B4252
+}
+.contenidoFooter1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: solid 3px #2E3440;
+    margin-bottom: 50px;
+}
+.contenidFooter2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-family: MyFamily;
+    color: #D8DEE9
+    
+}
+.footerTitle {
+    font-family: MyFamily2;
+    font-size: 20px;
+    color: #88C0D0
+}
+.footerInfo {
+    margin: 70px;
+}
+.footerInfo ul li {
+    list-style:none;
+    font-family: MyFamily;
+    font-size: 20px;
+    color: #E5E9F0;
+}
+.footerInfo ul li a {
+    text-decoration: none;
+    color: #ECEFF4
+}
+.footerSupport {
+    margin: 70px;
+}
+.footerSupport ul li {
+    list-style:none;
+    font-family: MyFamily;
+    font-size: 20px;
+    color: #E5E9F0;
+}
+.footerSupport ul li a{
+    text-decoration: none;
+    color: #ECEFF4
+}
+.footerSocials {
+    margin: 70px;
+}
+.footerSocials ul li{
+    list-style:none;
+    font-family: MyFamily;
+    font-size: 20px;
+    color: #E5E9F0;
+}
+.footerSocials ul li a{
+    text-decoration: none;
+    color: #ECEFF4
+}
+                                                        /*FIN INDEX
+                                                            .HTML*/
+
+@media screen and (max-width: 750px) {
+        .grilla1, .grilla2 {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0% 3%;
+        justify-content: center;
+        margin: 0 auto;
+        padding-left: 3%;
+        padding-right: 3%;
+        }
+        .prueba,  .prueba2 {
+            font-size:30px;
+        }
+        .contenidoFooter1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: solid 3px #2E3440;
+            margin-bottom: 50px;
+        }
+        .footerTitle {
+            font-family: MyFamily2;
+            font-size: 40px;
+            color: #88C0D0;
+        }
+        .footerInfo ul li,
+        .footerSupport ul li,
+        .footerSocials ul li {
+            font-size: 30px;
+
+        }
+}
