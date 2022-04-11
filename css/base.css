@@ -23,7 +23,20 @@
     border-radius: 20px;
     overflow: hidden;
 }
-
+.colorButton {
+background-color: #A3BE8C ;
+color : #ECEFF4;
+}
+.colorNav {
+    background-color: #3B4252;
+}
+.iconNav  {
+    width: 30px;
+}
+.contactoFont {
+    font-family: MyFamily;
+    color :#ECEFF4;
+}
 .zoom {
     transition: transform .2s;
 }
@@ -31,7 +44,7 @@
     transform: scale(1.1);
 }
 body {
-    background-color: #434C5E
+    background-color: #434C5E 
 }
 .title{
     display: flex;
@@ -53,65 +66,16 @@ body {
     padding-left: 20px; 
 
 }
-                                            /*HEADER*/
-header {
-    border-bottom: 3px solid #2E3440;
-    background-color: #3B4252;
-}
-.header {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
-    grid-gap: 0 3%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-left: 55px;
-    padding-right: 55px;
-    align-items: center;
 
-}
-/*.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-bottom: 3px solid #2E3440;
-    background-color: #3B4252;
-    align-items: center;
-}*/
-/*.header__logo a img {
-    padding-left: 20px;
-}
-.header__search a img {
-    padding-right: 50px;
-}
-.header__perfil a img {
-    padding-right: 50px;
-}
-.header__cart a img{
-    padding-right: 20px;
-
-}*/
-
-.header__nav ul li {
-    display: inline;
-    font-size: 20px;
-    padding: 10px;
-}
-.header__nav ul li a {
-    font-family: MyFamily;
-    text-decoration: none;
-    color: #88C0D0;
-}
                                                     /*BEST SELLERS*/
-.grilla1 {
+.grilla2x1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0 3%;
+    grid-gap: 0 2.5%;
     justify-content: center;
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: 55px;
-    padding-right: 55px;
+
 }
 .nombrePrecioBs {
     font-family: MyFamily2;
@@ -121,15 +85,14 @@ header {
     padding-bottom: 40px;
 }
                                                 /*NEW ARRIVALS*/
-.grilla2 {
+.grilla3x3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0 3%;
+    grid-gap: 0 2.5%;
     justify-content: center;
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: 55px;
-    padding-right: 55px;
+
 }
 .nombrePrecioNa {
     font-family: MyFamily2;
@@ -208,16 +171,12 @@ header {
                                                             .HTML*/
 
 @media screen and (max-width: 750px) {
-        .grilla1, .grilla2 {
+        .grilla2x1, .grilla3x3 {
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 0% 3%;
         justify-content: center;
-        margin: 0 auto;
-        padding-left: 3%;
-        padding-right: 3%;
         }
-        .prueba,  .prueba2 {
-            font-size:30px;
+        .nombrePrecioBs,  .nombrePrecioNa {
+            font-size:20px ;
         }
         .contenidoFooter1 {
             display: flex;
@@ -228,13 +187,16 @@ header {
         }
         .footerTitle {
             font-family: MyFamily2;
-            font-size: 40px;
+            font-size: 30px;
             color: #88C0D0;
         }
         .footerInfo ul li,
         .footerSupport ul li,
         .footerSocials ul li {
-            font-size: 30px;
+            font-size: 20px;
 
+        }
+        #carouselExampleCaptions {
+            display: none;
         }
 }
