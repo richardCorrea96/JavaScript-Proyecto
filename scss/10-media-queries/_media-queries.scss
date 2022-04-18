@@ -1,0 +1,29 @@
+@media screen and (max-width: 750px) {
+    .grilla2x1, .grilla3x3 {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+    .nombrePrecioBs,  .nombrePrecioNa {
+        font-size: $footer-title-size ;
+    }
+    .contenidoFooter1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: $zoom-container-border;
+        margin-bottom: $footer1-margin;
+    }
+    .footerTitle {
+        font-family: MyFamily2;
+        font-size: $footer-title-size + 10px;
+        color: $color-title;
+    }
+    .footerInfo ul li,
+    .footerSupport ul li,
+    .footerSocials ul li {
+        font-size: $footer-title-size;
+    }
+    #carouselExampleCaptions {
+        display: none;
+    }
+}

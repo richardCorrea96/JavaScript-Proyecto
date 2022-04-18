@@ -1,202 +1,171 @@
-                                        /*GENERALES/*/
+@font-face {
+  font-family: MyFamily;
+  src: url(../fuentes/ARLRDBD.ttf); }
+
+@font-face {
+  font-family: MyFamily2;
+  src: url(../fuentes/ContextRoundedBlackSSiBlack.ttf); }
+
 * {
-	margin: 0px;
-	padding: 0px;
-}
-@font-face {
-    font-family: MyFamily;
-    src: url(../fuentes/ARLRDBD.ttf);
-}
-@font-face {
-    font-family: MyFamily2;
-    src: url(../fuentes/ContextRoundedBlackSSiBlack.ttf);
-}
-.container {
-    display: flex;
-    flex-direction: column;
-}
-.img {
-    width: 100%;
-}
-.zoomContainer {
-    border: 3px solid #2E3440;
-    border-radius: 20px;
-    overflow: hidden;
-}
-.colorButton {
-background-color: #A3BE8C ;
-color : #ECEFF4;
-}
-.colorNav {
-    background-color: #3B4252;
-}
-.iconNav  {
-    width: 30px;
-}
-.contactoFont {
-    font-family: MyFamily;
-    color :#ECEFF4;
-}
-.zoom {
-    transition: transform .2s;
-}
-.zoom:hover {
-    transform: scale(1.1);
-}
+  margin: 0px;
+  padding: 0px; }
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 80px 0px 15px 0px;
+  font-family: MyFamily2;
+  text-align: center;
+  font-size: 40px;
+  color: #88C0D0; }
+
 body {
-    background-color: #434C5E 
-}
-.title{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 80px;
-    padding-bottom: 15px;
-    font-family: MyFamily2;
-    text-align: center;
-    font-size: 40px;
-    color: #88C0D0
-}
-.nombre {
-    float: left;  
-}
-.precio {
-    float: right;
-    color: #A3BE8C;
-    padding-left: 20px; 
+  background-color: #434C5E; }
 
-}
+.colorButton {
+  background-color: #A3BE8C;
+  color: #ECEFF4; }
 
-                                                    /*BEST SELLERS*/
+.colorNav {
+  background-color: #3B4252; }
+
+.iconNav {
+  width: 30px; }
+
 .grilla2x1 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0 2.5%;
-    justify-content: center;
-    max-width: 1400px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 2.5%;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto; }
 
-}
-.nombrePrecioBs {
-    font-family: MyFamily2;
-    font-size: 25px;
-    color: #8FBCBB;
-    padding-top: 20px;
-    padding-bottom: 40px;
-}
-                                                /*NEW ARRIVALS*/
 .grilla3x3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0 2.5%;
-    justify-content: center;
-    max-width: 1400px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0 2.5%;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto; }
 
-}
+.img {
+  width: 100%; }
+
+.zoom {
+  transition: transform .2s; }
+  .zoom:hover {
+    transform: scale 1.1; }
+
+.zoomContainer {
+  border: 3px solid #2E3440;
+  border-radius: 20px;
+  overflow: hidden; }
+
+.container {
+  display: flex;
+  flex-direction: column; }
+
+.nombre {
+  float: left; }
+
+.precio {
+  float: right;
+  color: #A3BE8C;
+  padding-left: 20px; }
+
+.nombrePrecioBs {
+  font-family: MyFamily2;
+  font-size: 25px;
+  color: #8FBCBB;
+  padding: 20px 0px 40px 0px; }
+
 .nombrePrecioNa {
-    font-family: MyFamily2;
-    color: #8FBCBB;
-    padding-top: 20px;
-    padding-bottom: 40px;
-}
-                                                    /* FOOTER */
+  font-family: MyFamily2;
+  color: #8FBCBB;
+  padding: 20px 0px 40px 0px; }
+
+.contactoFont {
+  font-family: MyFamily;
+  color: #ECEFF4; }
 
 .contenidoFooter {
-    margin-top: 80px;
-    padding-bottom: 50px;
-    text-align: center;
-    background-color: #3B4252
-}
+  margin-top: 80px;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #3B4252; }
+
 .contenidoFooter1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-bottom: solid 3px #2E3440;
-    margin-bottom: 50px;
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: solid 3px #2E3440;
+  margin-bottom: 50px; }
+
 .contenidFooter2 {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    font-family: MyFamily;
-    color: #D8DEE9
-    
-}
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  font-family: MyFamily2;
+  color: #ECEFF4; }
+
 .footerTitle {
-    font-family: MyFamily2;
-    font-size: 20px;
-    color: #88C0D0
-}
+  font-family: MyFamily2;
+  font-size: 20px;
+  color: #88C0D0; }
+
 .footerInfo {
-    margin: 70px;
-}
+  margin: 70px; }
+
 .footerInfo ul li {
-    list-style:none;
-    font-family: MyFamily;
-    font-size: 20px;
-    color: #E5E9F0;
-}
-.footerInfo ul li a {
+  list-style: none;
+  font-family: MyFamily;
+  font-size: 20px; }
+  .footerInfo ul li a {
     text-decoration: none;
-    color: #ECEFF4
-}
+    color: #ECEFF4; }
+
 .footerSupport {
-    margin: 70px;
-}
+  margin: 70px; }
+
 .footerSupport ul li {
-    list-style:none;
-    font-family: MyFamily;
-    font-size: 20px;
-    color: #E5E9F0;
-}
-.footerSupport ul li a{
+  list-style: none;
+  font-family: MyFamily;
+  font-size: 20px; }
+  .footerSupport ul li a {
     text-decoration: none;
-    color: #ECEFF4
-}
+    color: #ECEFF4; }
+
 .footerSocials {
-    margin: 70px;
-}
-.footerSocials ul li{
-    list-style:none;
-    font-family: MyFamily;
-    font-size: 20px;
-    color: #E5E9F0;
-}
-.footerSocials ul li a{
+  margin: 70px; }
+
+.footerSocials ul li {
+  list-style: none;
+  font-family: MyFamily;
+  font-size: 20px; }
+  .footerSocials ul li a {
     text-decoration: none;
-    color: #ECEFF4
-}
-                                                        /*FIN INDEX
-                                                            .HTML*/
+    color: #ECEFF4; }
 
 @media screen and (max-width: 750px) {
-        .grilla2x1, .grilla3x3 {
-        grid-template-columns: repeat(1, 1fr);
-        justify-content: center;
-        }
-        .nombrePrecioBs,  .nombrePrecioNa {
-            font-size:20px ;
-        }
-        .contenidoFooter1 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: solid 3px #2E3440;
-            margin-bottom: 50px;
-        }
-        .footerTitle {
-            font-family: MyFamily2;
-            font-size: 30px;
-            color: #88C0D0;
-        }
-        .footerInfo ul li,
-        .footerSupport ul li,
-        .footerSocials ul li {
-            font-size: 20px;
-
-        }
-        #carouselExampleCaptions {
-            display: none;
-        }
-}
+  .grilla2x1, .grilla3x3 {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center; }
+  .nombrePrecioBs, .nombrePrecioNa {
+    font-size: 20px; }
+  .contenidoFooter1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 3px solid #2E3440;
+    margin-bottom: 50px; }
+  .footerTitle {
+    font-family: MyFamily2;
+    font-size: 30px;
+    color: #88C0D0; }
+  .footerInfo ul li,
+  .footerSupport ul li,
+  .footerSocials ul li {
+    font-size: 20px; }
+  #carouselExampleCaptions {
+    display: none; } }

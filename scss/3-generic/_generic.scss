@@ -1,0 +1,21 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: $title-padding;
+    font-family: MyFamily2;
+    text-align: center;
+    font-size: $title-size;
+    color: $color-title;
+}
+body {
+    background-color: #434C5E;
+}
+.colorButton {
+    background-color: $color-green;
+    color: $color-white;
+}

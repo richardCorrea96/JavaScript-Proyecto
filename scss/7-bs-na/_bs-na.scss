@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.nombre {
+    float: left;
+}
+.precio {
+    float: right;
+    color: $color-green;
+    padding-left: $precio-padding;
+}
+.nombrePrecioBs {
+    font-family: MyFamily2;
+    font-size: $nombre-precio-size;
+    color: $nomrbre-precio-color;
+    padding: $nombre-precio-padding;
+}
+.nombrePrecioNa {
+    font-family: MyFamily2;
+    color: $nomrbre-precio-color;
+    padding: $nombre-precio-padding;
+}

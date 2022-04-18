@@ -1,0 +1,16 @@
+.grilla2x1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $grilla-gap;
+    justify-content: center;
+    max-width: $grilla-size;
+    margin: $grilla-margin;
+}
+.grilla3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $grilla-gap;
+    justify-content: center;
+    max-width: $grilla-size;
+    margin: $grilla-margin;
+}
