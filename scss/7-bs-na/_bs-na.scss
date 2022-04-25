@@ -1,23 +1,32 @@
+$estilos: (
+    dflex: flex,
+    direccion: column,
+    familia: MyFamily2,
+    der: right,
+    izq: left,
+);
+
 .container {
-    display: flex;
-    flex-direction: column;
+    display: map-get($estilos, dflex);
+    flex-direction: map-get($estilos, direccion);
+    ;
 }
 .nombre {
-    float: left;
+    float: map-get($estilos, izq);
 }
 .precio {
-    float: right;
+    float: map-get($estilos, der);
     color: $color-green;
     padding-left: $precio-padding;
 }
 .nombrePrecioBs {
-    font-family: MyFamily2;
+    font-family: map-get($estilos, familia);
     font-size: $nombre-precio-size;
     color: $nomrbre-precio-color;
     padding: $nombre-precio-padding;
 }
 .nombrePrecioNa {
-    font-family: MyFamily2;
+    font-family: map-get($estilos, familia );
     color: $nomrbre-precio-color;
     padding: $nombre-precio-padding;
 }

@@ -1,78 +1,59 @@
+$estilos: (
+    centro: center,
+    dflex: flex,
+    direccion: row,
+    familia: MyFamily,
+    familia2: MyFamily2,
+    nada: none
+);
+
 .contenidoFooter {
     margin-top: $contenido-footer-margin;
     padding-bottom: $contenido-footer-padding;
-    text-align: center;
+    text-align: map-get($estilos, centro);
     background-color: $color-base-dark;
 }
 
 .contenidoFooter1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: map-get($estilos, dflex);
+    flex-direction: map-get($estilos, direccion);
+    justify-content: map-get($estilos, centro);
     border-bottom: $linea-footer;
     margin-bottom: $footer1-margin;
 }	
 
 .contenidFooter2 {
-    display: flex;
-    justify-content: center;
+    display: map-get($estilos, dflex);
+    justify-content: map-get($estilos, centro);
     padding-top: $footer2-padding;
-    font-family: MyFamily2;
+    font-family: map-get($estilos, familia2);
     color: $color-white;
 }
 
 .footerTitle {
-    font-family: MyFamily2;
+    font-family: map-get($estilos, familia2);
     font-size: $footer-title-size;
     color: $color-title;
 }
 
 .footerInfo {
     margin: $footer-margin;
+    ul {
+        li {
+            list-style: none;
+            font-family: MyFamily;
+            font-size: $footer-title-size;
+            a {
+                text-decoration: none;
+                color : $color-white ;
+            }
+        }
+    }
+}
+.footerSupport {
+    @extend.footerInfo;
 }
 
-.footerInfo {
-    ul {
-        li {
-            list-style: none;
-            font-family: MyFamily;
-            font-size: $footer-title-size;
-            a {
-                text-decoration: none;
-                color : $color-white ;
-            }
-        }
-    }
-}
-.footerSupport {
-    margin: $footer-margin;
-}
-.footerSupport {
-    ul {
-        li {
-            list-style: none;
-            font-family: MyFamily;
-            font-size: $footer-title-size;
-            a {
-                text-decoration: none;
-                color : $color-white ;
-            }
-        }
-    }
-}
 .footerSocials {
-    margin: $footer-margin;
-}
-.footerSocials {
-    ul {
-        li {
-            list-style: none;
-            font-family: MyFamily;
-            font-size: $footer-title-size;
-            a {
-                text-decoration: none;
-                color : $color-white ;
-            }
-        }
-    }
+    @extend.footerInfo;
 }

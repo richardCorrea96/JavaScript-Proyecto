@@ -11,10 +11,11 @@
   padding: 0px; }
 
 .title {
+  margin: 0px;
+  padding: 80px 0px 40px 0px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 80px 0px 15px 0px;
   font-family: MyFamily2;
   text-align: center;
   font-size: 40px;
@@ -33,7 +34,7 @@ body {
 .iconNav {
   width: 30px; }
 
-.grilla2x1 {
+.grilla2x1, .grilla3x3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 2.5%;
@@ -42,12 +43,7 @@ body {
   margin: 0 auto; }
 
 .grilla3x3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0 2.5%;
-  justify-content: center;
-  max-width: 1400px;
-  margin: 0 auto; }
+  grid-template-columns: repeat(3, 1fr); }
 
 .img {
   width: 100%; }
@@ -114,41 +110,18 @@ body {
   font-size: 20px;
   color: #88C0D0; }
 
-.footerInfo {
+.footerInfo, .footerSupport, .footerSocials {
   margin: 70px; }
-
-.footerInfo ul li {
-  list-style: none;
-  font-family: MyFamily;
-  font-size: 20px; }
-  .footerInfo ul li a {
-    text-decoration: none;
-    color: #ECEFF4; }
-
-.footerSupport {
-  margin: 70px; }
-
-.footerSupport ul li {
-  list-style: none;
-  font-family: MyFamily;
-  font-size: 20px; }
-  .footerSupport ul li a {
-    text-decoration: none;
-    color: #ECEFF4; }
-
-.footerSocials {
-  margin: 70px; }
-
-.footerSocials ul li {
-  list-style: none;
-  font-family: MyFamily;
-  font-size: 20px; }
-  .footerSocials ul li a {
-    text-decoration: none;
-    color: #ECEFF4; }
+  .footerInfo ul li, .footerSupport ul li, .footerSocials ul li {
+    list-style: none;
+    font-family: MyFamily;
+    font-size: 20px; }
+    .footerInfo ul li a, .footerSupport ul li a, .footerSocials ul li a {
+      text-decoration: none;
+      color: #ECEFF4; }
 
 @media screen and (max-width: 750px) {
-  .grilla2x1, .grilla3x3 {
+  .grilla2x1, .grilla3x3, .grilla3x3 {
     grid-template-columns: repeat(1, 1fr);
     justify-content: center; }
   .nombrePrecioBs, .nombrePrecioNa {
@@ -163,7 +136,7 @@ body {
     font-family: MyFamily2;
     font-size: 30px;
     color: #88C0D0; }
-  .footerInfo ul li,
+  .footerInfo ul li, .footerSupport ul li, .footerSocials ul li,
   .footerSupport ul li,
   .footerSocials ul li {
     font-size: 20px; }

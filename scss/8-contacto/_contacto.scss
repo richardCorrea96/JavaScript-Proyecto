@@ -1,4 +1,7 @@
+$estilos: (
+    familia: MyFamily,
+);
 .contactoFont {
-    font-family: MyFamily;
+    font-family: map-get($estilos, familia);
     color: $color-white;
 }

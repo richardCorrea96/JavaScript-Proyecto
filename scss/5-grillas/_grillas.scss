@@ -1,16 +1,19 @@
+$estilos: (
+    grilla: grid, 
+    centro: center,
+);
+
+
 .grilla2x1 {
-    display: grid;
+    display: map-get($estilos, grilla);
     grid-template-columns: repeat(2, 1fr);
     grid-gap: $grilla-gap;
-    justify-content: center;
+    justify-content: map-get($estilos, centro);
     max-width: $grilla-size;
     margin: $grilla-margin;
 }
 .grilla3x3 {
-    display: grid;
+    @extend .grilla2x1;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: $grilla-gap;
-    justify-content: center;
-    max-width: $grilla-size;
-    margin: $grilla-margin;
+
 }

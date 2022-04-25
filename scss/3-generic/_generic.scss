@@ -1,14 +1,23 @@
-* {
-	margin: 0px;
-	padding: 0px;
+@mixin espacios($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
 }
+* {
+	@include espacios(0px, 0px);
+}
+$estilos: (
+    dflex: flex,
+    direccion: row,
+    centro: center,
+    familia: MyFamily2,
+);
 .title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: $title-padding;
-    font-family: MyFamily2;
-    text-align: center;
+    @include espacios(0px, $title-padding);
+    display: map-get($estilos, dflex);
+    flex-direction: map-get($estilos, direccion);
+    justify-content: map-get($estilos, centro);
+    font-family: map-get($estilos, familia);
+    text-align: map-get($estilos, centro);
     font-size: $title-size;
     color: $color-title;
 }
