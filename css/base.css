@@ -1,3 +1,4 @@
+/*FUENTES*/
 @font-face {
   font-family: MyFamily;
   src: url(../fuentes/ARLRDBD.ttf); }
@@ -6,6 +7,7 @@
   font-family: MyFamily2;
   src: url(../fuentes/ContextRoundedBlackSSiBlack.ttf); }
 
+/*GENERICOS*/
 * {
   margin: 0px;
   padding: 0px; }
@@ -28,12 +30,14 @@ body {
   background-color: #A3BE8C;
   color: #ECEFF4; }
 
+/*NAV*/
 .colorNav {
   background-color: #3B4252; }
 
 .iconNav {
   width: 30px; }
 
+/*GRILLAS*/
 .grilla2x1, .grilla3x3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -45,6 +49,7 @@ body {
 .grilla3x3 {
   grid-template-columns: repeat(3, 1fr); }
 
+/*IMAGENES Y ZOOM*/
 .img {
   width: 100%; }
 
@@ -58,6 +63,7 @@ body {
   border-radius: 20px;
   overflow: hidden; }
 
+/*BEST SELLERS Y NEW ARRIVALS*/
 .container {
   display: flex;
   flex-direction: column; }
@@ -81,10 +87,12 @@ body {
   color: #8FBCBB;
   padding: 20px 0px 40px 0px; }
 
+/*CONTACTO*/
 .contactoFont {
   font-family: MyFamily;
   color: #ECEFF4; }
 
+/*FOOTER*/
 .contenidoFooter {
   margin-top: 80px;
   padding-bottom: 50px;
@@ -120,6 +128,7 @@ body {
       text-decoration: none;
       color: #ECEFF4; }
 
+/*MEDIA QUERIES*/
 @media screen and (max-width: 750px) {
   .grilla2x1, .grilla3x3, .grilla3x3 {
     grid-template-columns: repeat(1, 1fr);
