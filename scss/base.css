@@ -1,0 +1,233 @@
+/*FUENTES*/
+@font-face {
+  font-family: MyFamily;
+  src: url(../fuentes/ARLRDBD.ttf);
+}
+
+@font-face {
+  font-family: MyFamily2;
+  src: url(../fuentes/ContextRoundedBlackSSiBlack.ttf);
+}
+
+/*GENERICOS*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.title {
+  margin: 0px;
+  padding: 80px 0px 40px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: MyFamily2;
+  text-align: center;
+  font-size: 40px;
+  color: #88C0D0;
+}
+
+body {
+  background-color: #434C5E;
+}
+
+.colorButton {
+  background-color: #A3BE8C;
+  color: #ECEFF4;
+}
+
+/*NAV*/
+.colorNav {
+  background-color: #3B4252;
+}
+
+.iconNav {
+  width: 30px;
+}
+
+/*GRILLAS*/
+.grilla2x1, .grilla3x3 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 2.5%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.grilla3x3 {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+/*IMAGENES Y ZOOM*/
+.img {
+  width: 100%;
+}
+
+.zoom {
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.zoom:hover {
+  -webkit-transform: scale 1.1;
+          transform: scale 1.1;
+}
+
+.zoomContainer {
+  border: 3px solid #2E3440;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/*BEST SELLERS Y NEW ARRIVALS*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nombre {
+  float: left;
+}
+
+.precio {
+  float: right;
+  color: #A3BE8C;
+  padding-left: 20px;
+}
+
+.nombrePrecioBs {
+  font-family: MyFamily2;
+  font-size: 25px;
+  color: #8FBCBB;
+  padding: 20px 0px 40px 0px;
+}
+
+.nombrePrecioNa {
+  font-family: MyFamily2;
+  color: #8FBCBB;
+  padding: 20px 0px 40px 0px;
+}
+
+/*CONTACTO*/
+.contactoFont {
+  font-family: MyFamily;
+  color: #ECEFF4;
+}
+
+/*FOOTER*/
+.contenidoFooter {
+  margin-top: 80px;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #3B4252;
+}
+
+.contenidoFooter1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: solid 3px #2E3440;
+  margin-bottom: 50px;
+}
+
+.contenidFooter2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 10px;
+  font-family: MyFamily2;
+  color: #ECEFF4;
+}
+
+.footerTitle {
+  font-family: MyFamily2;
+  font-size: 20px;
+  color: #88C0D0;
+}
+
+.footerInfo, .footerSupport, .footerSocials {
+  margin: 70px;
+}
+
+.footerInfo ul li, .footerSupport ul li, .footerSocials ul li {
+  list-style: none;
+  font-family: MyFamily;
+  font-size: 20px;
+}
+
+.footerInfo ul li a, .footerSupport ul li a, .footerSocials ul li a {
+  text-decoration: none;
+  color: #ECEFF4;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 750px) {
+  .grilla2x1, .grilla3x3, .grilla3x3 {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .nombrePrecioBs, .nombrePrecioNa {
+    font-size: 20px;
+  }
+  .contenidoFooter1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-bottom: 3px solid #2E3440;
+    margin-bottom: 50px;
+  }
+  .footerTitle {
+    font-family: MyFamily2;
+    font-size: 30px;
+    color: #88C0D0;
+  }
+  .footerInfo ul li, .footerSupport ul li, .footerSocials ul li,
+  .footerSupport ul li,
+  .footerSocials ul li {
+    font-size: 20px;
+  }
+  #carouselExampleCaptions {
+    display: none;
+  }
+}
+/*# sourceMappingURL=base.css.map */
