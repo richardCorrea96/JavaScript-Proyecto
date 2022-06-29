@@ -9,6 +9,7 @@ const precioTotal = document.querySelector('#precioTotal')
 
 const btnVaciar = document.getElementById('vaciarCarrito')
 
+//JSON STORAGE -- prestar atencion para no usar sessionStorage
 let carrito
 const carritoEnLS = JSON.parse( localStorage.getItem('carrito') )
 
@@ -35,6 +36,7 @@ const agregarAlCarrito = (id) => {
     const item = stockProductos.find( (producto) => producto.id === id)
     carrito.push(item)
 
+    //JSON STORAGE -- prestar atencion para no usar sessionStorage
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     console.log(carrito)
@@ -48,6 +50,7 @@ const removerDelCarrito = (id) => {
     const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
 
+    //remueve el producto del carrito
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     renderCarrito()
@@ -58,6 +61,7 @@ const removerDelCarrito = (id) => {
 const vaciarCarrito = () => {
     carrito.length = 0
 
+    //vacia por completo el carrito de productos
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     renderCarrito()
@@ -100,7 +104,8 @@ const renderTotal = () => {
 
 if (carritoEnLS) {
     carrito = carritoEnLS
-
+//esta parte es para que si encuentra algo al cargar la pagina, lo rederice
+//este if esta colocado al final, para no tener problemas con las referencias
     renderCarrito()
     renderCantidad()
     renderTotal()
