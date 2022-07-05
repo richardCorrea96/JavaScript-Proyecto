@@ -35,7 +35,7 @@ stockProductos.forEach((producto) => {
 const agregarAlCarrito = (id) => {
     const item = stockProductos.find( (producto) => producto.id === id)
     carrito.push(item)
-
+    toastAgregar(item.nombre)
     //JSON STORAGE -- prestar atencion para no usar sessionStorage
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
@@ -49,6 +49,7 @@ const removerDelCarrito = (id) => {
     const item = carrito.find((producto) => producto.id === id)
     const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
+    toastRemover(item.nombre)
 
     //remueve el producto del carrito
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -59,14 +60,11 @@ const removerDelCarrito = (id) => {
 }
 
 const vaciarCarrito = () => {
-    carrito.length = 0
+    
 
+    swalVaciar()
     //vacia por completo el carrito de productos
-    localStorage.setItem('carrito', JSON.stringify(carrito))
 
-    renderCarrito()
-    renderCantidad()
-    renderTotal()
 }
 
 btnVaciar.addEventListener('click', vaciarCarrito)
@@ -88,6 +86,7 @@ const renderCarrito = () => {
     })
 }
 
+
 const renderCantidad = () => {
     contadorCarrito.innerText = carrito.length
 }
@@ -100,7 +99,53 @@ const renderTotal = () => {
 
     precioTotal.innerText = total
 }
-
+const toastAgregar = (producto) => {
+    Toastify({
+        text:`${producto} se ageregó correctamente` ,
+        duration: 2000,
+        gravity: 'bottom',
+        position: 'right',
+        style: {
+            background: "linear-gradient(to right, #88C0D0, #88C0D0)",
+        }
+    }).showToast()
+}
+const toastRemover = (producto) => {
+    Toastify({
+        text:`${producto} se eliminó correctamente` ,
+        className: "toastRemover",
+        duration: 2000,
+        gravity: 'bottom',
+        position: 'right',
+        style: {
+            background: "linear-gradient(to right, #BF616A, #BF616A)",
+        }
+        
+    }).showToast()
+}
+const swalVaciar = ()  => {
+Swal.fire({
+    title: 'Estás seguro/a ?',
+    text: "No puedes deshacer esta opción",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'Cancelar',
+    confirmButtonText: 'Si, eliminar todo!'
+    }).then((result) => {
+    if (result.isConfirmed) {
+        carrito.length = 0
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+        renderCarrito()
+        renderCantidad()
+        renderTotal()
+        Swal.fire(
+            'El carrito está vacío',
+        )
+    }
+})
+}
 
 if (carritoEnLS) {
     carrito = carritoEnLS
