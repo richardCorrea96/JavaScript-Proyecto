@@ -32,10 +32,22 @@ stockProductos.forEach((producto) => {
 })
 
 
-const agregarAlCarrito = (id) => {
-    const item = stockProductos.find( (producto) => producto.id === id)
-    carrito.push(item)
-    toastAgregar(item.nombre)
+const agregarAlCarrito = (idProducto) => {
+
+    const itemInCart = carrito.find((producto) => producto.id === idProducto)
+    if (itemInCart){
+        itemInCart.cantidad ++
+        toastAgregar(itemInCart.nombre)
+
+    }else{
+    const {id, nombre, precio} = stockProductos.find((producto) => producto.id === idProducto)
+    const itemToCart = {
+        id, nombre, precio, cantidad: 1
+    }
+    carrito.push(itemToCart)
+    toastAgregar(nombre)
+    }
+    
     //JSON STORAGE -- prestar atencion para no usar sessionStorage
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
@@ -47,10 +59,13 @@ const agregarAlCarrito = (id) => {
 
 const removerDelCarrito = (id) => {
     const item = carrito.find((producto) => producto.id === id)
-    const indice = carrito.indexOf(item)
-    carrito.splice(indice, 1)
+    item.cantidad --
+    if(item.cantidad === 0){
+        const indice = carrito.indexOf(item)
+        carrito.splice(indice, 1)
+    
+    }
     toastRemover(item.nombre)
-
     //remueve el producto del carrito
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
@@ -77,7 +92,8 @@ const renderCarrito = () => {
         div.classList.add('productoEnCarrito')
 
         div.innerHTML = `
-                    <p class="carritoNombrePrecio">${item.nombre}</p>
+                    <p class="carritoNombrePrecio">${item.nombre}</p>´
+                    <p>Cant: ${item.cantidad}</p>
                     <p class="carritoNombrePrecio">Precio: $${item.precio}</p>
                     <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
                     `
@@ -88,13 +104,12 @@ const renderCarrito = () => {
 
 
 const renderCantidad = () => {
-    contadorCarrito.innerText = carrito.length
-}
+    contadorCarrito.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad, 0)}
 
 const renderTotal = () => {
     let total = 0
     carrito.forEach((producto) => {
-        total += producto.precio
+        total += producto.precio * producto.cantidad
     })
 
     precioTotal.innerText = total
@@ -112,7 +127,7 @@ const toastAgregar = (producto) => {
 }
 const toastRemover = (producto) => {
     Toastify({
-        text:`${producto} se eliminó correctamente` ,
+        text:`Se eliminó 1 unidad de: ${producto}` ,
         className: "toastRemover",
         duration: 2000,
         gravity: 'bottom',
