@@ -16,20 +16,27 @@ const carritoEnLS = JSON.parse( localStorage.getItem('carrito') )
 
 
 // generar el DOM de todos los productos
-stockProductos.forEach((producto) => {
-    const div = document.createElement('div')
-    div.classList.add('producto')
-
-    div.innerHTML = `
-                    <img src=${producto.img} alt="" class="imgProducto" >
-                    <h3 class="nombre">${producto.nombre}</h3>
-                    <p class="description">${producto.desc}</p>
-                    <p class="precioProducto">Precio: $${producto.precio}</p>
-                    <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
-                `
-
-    productosContainer.append(div)
-})
+let stock = []
+fetch('./stock.json')
+    .then((resp) => resp.json())
+    .then((data)=> {
+        stock = data
+        
+        stock.forEach((producto) => {
+            const div = document.createElement('div')
+            div.classList.add('producto')
+            
+            div.innerHTML = `
+                            <img src=${producto.img} alt="" class="imgProducto" >
+                            <h3 class="nombre">${producto.nombre}</h3>
+                            <p class="description">${producto.desc}</p>
+                            <p class="precioProducto">Precio: $${producto.precio}</p>
+                            <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
+                        `
+        
+            productosContainer.append(div)
+        })
+    })
 
 
 const agregarAlCarrito = (idProducto) => {
@@ -40,7 +47,7 @@ const agregarAlCarrito = (idProducto) => {
         toastAgregar(itemInCart.nombre)
 
     }else{
-    const {id, nombre, precio} = stockProductos.find((producto) => producto.id === idProducto)
+    const {id, nombre, precio} = stock.find((producto) => producto.id === idProducto)
     const itemToCart = {
         id, nombre, precio, cantidad: 1
     }
@@ -92,9 +99,9 @@ const renderCarrito = () => {
         div.classList.add('productoEnCarrito')
 
         div.innerHTML = `
-                    <p class="carritoNombrePrecio">${item.nombre}</p>´
-                    <p>Cant: ${item.cantidad}</p>
-                    <p class="carritoNombrePrecio">Precio: $${item.precio}</p>
+                    <p class="carritoTexto">${item.nombre}</p>
+                    <p class="carritoTexto">Cant: ${item.cantidad}</p>
+                    <p class="carritoTexto">Precio: $${item.precio}</p>
                     <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
                     `
         
