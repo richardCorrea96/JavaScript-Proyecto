@@ -14,28 +14,13 @@ let carrito
 const carritoEnLS = JSON.parse( localStorage.getItem('carrito') )
 
 
-
 // generar el DOM de todos los productos
 let stock = []
 fetch('./stock.json')
     .then((resp) => resp.json())
     .then((data)=> {
         stock = data
-        
-        stock.forEach((producto) => {
-            const div = document.createElement('div')
-            div.classList.add('producto')
-            
-            div.innerHTML = `
-                            <img src=${producto.img} alt="" class="imgProducto" >
-                            <h3 class="nombre">${producto.nombre}</h3>
-                            <p class="description">${producto.desc}</p>
-                            <p class="precioProducto">Precio: $${producto.precio}</p>
-                            <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
-                        `
-        
-            productosContainer.append(div)
-        })
+        productDom()
     })
 
 
@@ -108,7 +93,22 @@ const renderCarrito = () => {
         carritoContenedor.append(div)
     })
 }
-
+const productDom = () => {
+    stock.forEach((producto) => {
+        const div = document.createElement('div')
+        div.classList.add('producto')
+        
+        div.innerHTML = `
+                        <img src=${producto.img} alt="" class="imgProducto" >
+                        <h3 class="nombre">${producto.nombre}</h3>
+                        <p class="description">${producto.desc}</p>
+                        <p class="precioProducto">Precio: $${producto.precio}</p>
+                        <button onclick="agregarAlCarrito(${producto.id})" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
+                    `
+    
+        productosContainer.append(div)
+    })
+}
 
 const renderCantidad = () => {
     contadorCarrito.innerText = carrito.reduce((acc,prod) => acc + prod.cantidad, 0)}
