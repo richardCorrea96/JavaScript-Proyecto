@@ -118,8 +118,13 @@ const renderTotal = () => {
     carrito.forEach((producto) => {
         total += producto.precio * producto.cantidad
     })
-
     precioTotal.innerText = total
+}
+
+const carritoEnCero = ()=> {
+    carrito.length = 0
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
 }
 const toastAgregar = (producto) => {
     Toastify({
@@ -157,8 +162,7 @@ Swal.fire({
     confirmButtonText: 'Si, eliminar todo!'
     }).then((result) => {
     if (result.isConfirmed) {
-        carrito.length = 0
-        localStorage.setItem('carrito', JSON.stringify(carrito))
+        carritoEnCero()
         renderCarrito()
         renderCantidad()
         renderTotal()
